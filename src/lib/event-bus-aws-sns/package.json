@@ -1,0 +1,18 @@
+{
+  "name": "@dybdahl-iot/event-bus-aws-sns",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint . --ext .js,.ts",
+    "format": "pnpm lint --fix"
+  },
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "files": [
+    "/dist"
+  ],
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@dybdahl-iot/event-bus": "workspace:*"
+  }
+}

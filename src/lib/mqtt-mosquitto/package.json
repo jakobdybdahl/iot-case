@@ -1,0 +1,20 @@
+{
+  "name": "@dybdahl-iot/mqtt-mosquitto",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "files": [
+    "/dist"
+  ],
+  "devDependencies": {
+    "@dybdahl-iot/event-bus": "workspace:*",
+    "@types/amqplib": "^0.10.4",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "mqtt": "5.3.5"
+  }
+}

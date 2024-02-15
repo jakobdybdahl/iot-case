@@ -1,0 +1,38 @@
+version: "3.4"
+
+services:
+  device-management:
+    image: dybdahl-iot/device-management
+    build:
+      dockerfile: Dockerfile
+      target: device-management
+    environment:
+      - MONGODB_CONNECTION_STRING=mongodb://mongo:27017/
+      - MONGODB_CONNECTION_STRING_SECRET_NAME=MONGODB_CONNECTION_STRING
+      - MONGODB_DB_NAME=iot-case
+    ports:
+      - 6001:3000
+      - 5001:5000
+    command: pnpm start:watch
+    volumes:
+      - ./services/device-management/src:/services/device-management/src
+    depends_on:
+      - mongo
+      - rabbitmq
+      - mqtt
+
+  mongo:
+    image: mongo:6.0.4
+
+  mqtt:
+    image: eclipse-mosquitto:2.0.15
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "15672:15672"
+      - "5672:5672"

@@ -1,0 +1,11 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:jest/recommended",
+    "prettier"
+  ],
+  "parserOptions": { "ecmaVersion": 2018, "sourceType": "module" },
+  "rules": {}
+}

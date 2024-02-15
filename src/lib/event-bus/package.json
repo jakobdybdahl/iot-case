@@ -1,0 +1,15 @@
+{
+  "name": "@dybdahl-iot/event-bus",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "type": "commonjs",
+  "main": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
